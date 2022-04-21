@@ -12,7 +12,7 @@ Go to [@oka_river_water_level_bot](https://t.me/oka_river_water_level_bot)
 
 # Supported docker tags
 
--   [vladkmrdnv/water_level_of_the_oka_river_bot:latest]((https://hub.docker.com/r/vladkmrdnv/water_level_of_the_oka_river_bot))
+-   [vladkmrdnv/water_level_of_the_oka_river_bot:latest](https://hub.docker.com/r/vladkmrdnv/water_level_of_the_oka_river_bot)
 
 
 # How it works?
