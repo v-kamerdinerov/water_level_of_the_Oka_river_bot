@@ -38,4 +38,4 @@ jobs:
           context: .
           push: true
           tags: ${{ env.IMAGE_NAME }}:${{ steps.get_version.outputs.version }}
-          build-args: "TOKEN=${{ env.TELEGRAM_API_KEY }}"
+          build-args: "TELEGRAM_API_KEY=${{ env.TELEGRAM_API_KEY }}"
