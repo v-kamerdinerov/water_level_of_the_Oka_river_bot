@@ -1,0 +1,6 @@
+version: "3.0"
+services:
+
+  bot:
+    image: vladkmrdnv/water_level_of_the_oka_river_bot:latest
+    restart: always
