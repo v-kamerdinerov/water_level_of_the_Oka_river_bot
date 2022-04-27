@@ -23,7 +23,7 @@ def start(m, res=False):
 # Get message from user
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
-    # Если юзер прислал 1, выдаем ему случайный факт
+    # If user tap button, return water level from level.py
     if message.text.strip() == 'Уровень':
         answer = check_level()
     logging.warning(f"send message: {answer}")
