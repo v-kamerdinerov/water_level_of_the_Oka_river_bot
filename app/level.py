@@ -4,11 +4,12 @@ from bs4 import BeautifulSoup
 
 
 response = ''
+source_url='https://allrivers.info/gauge/oka-ryazan/waterlevel'
+
 
 def check_level():
 
-    res = requests.get(
-        'https://allrivers.info/gauge/oka-ryazan')
+    res = requests.get(source_url)
     soup = BeautifulSoup(res.content, 'html.parser')
     logging.info(f"Parsing html page")
 
