@@ -1,8 +1,6 @@
 FROM python:3.10.4-slim-buster
 MAINTAINER 'vlad.kamerdinerov@yandex.ru'
-ARG TELEGRAM_API_KEY
 
-ENV TOKEN=$TELEGRAM_API_KEY
 ENV TZ="Europe/Moscow"
 
 

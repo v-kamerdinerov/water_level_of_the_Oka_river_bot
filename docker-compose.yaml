@@ -3,6 +3,6 @@ services:
   water_river_bot:
     build:
       context: .
-      args:
-        TELEGRAM_API_KEY: ''
+    environment:
+      TOKEN: ''
     restart: always
