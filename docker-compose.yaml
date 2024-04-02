@@ -1,7 +1,6 @@
 version: "3.0"
 services:
   water_river_bot:
-    build:
-      context: .
+    image: vladkmrdnv/water_level_of_the_oka_river_bot
     env_file: .env
     restart: always
