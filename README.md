@@ -1,4 +1,6 @@
 # water_level_of_the_Oka_river_bot
+![GitHub CI Status](https://github.com/v-kamerdinerov/water_level_of_the_Oka_river_bot/actions/workflows/lint.yaml/badge.svg)
+![GitHub CI Status](https://github.com/v-kamerdinerov/water_level_of_the_Oka_river_bot/actions/workflows/release.yaml/badge.svg)
 ![GitHub](https://img.shields.io/github/license/v-kamerdinerov/water_level_of_the_Oka_river_bot)
 [![GitHub tag](https://img.shields.io/github/tag/v-kamerdinerov/water_level_of_the_Oka_river_bot.svg)](https://github.com/v-kamerdinerov/water_level_of_the_Oka_river_bot/tags)
 
