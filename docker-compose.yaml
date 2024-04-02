@@ -3,6 +3,5 @@ services:
   water_river_bot:
     build:
       context: .
-    environment:
-      TOKEN: ''
+    env_file: .env
     restart: always
