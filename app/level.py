@@ -1,28 +1,38 @@
 import logging
 import requests
 import re
+import os
 from bs4 import BeautifulSoup
 
 
 response = ''
-source_url='https://allrivers.info/gauge/oka-ryazan/waterlevel'
+source_url = os.environ['URL']
+
+if 'URL' not in os.environ:
+    logging.error("Переменная окружения URL не установлена")
 
 
 def check_level():
+    logging.info(f"Парсим страницу: {source_url}")
 
-    res = requests.get(source_url)
-    soup = BeautifulSoup(res.content, 'html.parser')
-    logging.info(f"Parsing html page")
-
-    text = soup.text
+    try:
+        res = requests.get(source_url)
+        res.raise_for_status()
+        soup = BeautifulSoup(res.content, 'html.parser')
+    except requests.RequestException as e:
+        logging.error(f"Ошибка выполнения запроса: {e}")
+        return
+    except Exception as e:
+        logging.error(f"Ошибка парсинга HTML: {e}")
+        return
 
     # Регулярное выражение для поиска строки с заданным шаблоном
     level_pattern = r"уровень воды в реке Ока по данным гидропоста.*?(\d+) cм над нулем поста"
     delta_pattern = r"повысился на (\d+) см"
 
     # Поиск совпадений в тексте
-    level_match = re.search(level_pattern, text, re.IGNORECASE)
-    delta_match = re.search(delta_pattern, text, re.IGNORECASE)
+    level_match = re.search(level_pattern, soup.text, re.IGNORECASE)
+    delta_match = re.search(delta_pattern, soup.text, re.IGNORECASE)
 
     # Если совпадение найдено, извлекаем число
     if level_match:
@@ -37,6 +47,6 @@ def check_level():
     else:
         logging.error("Строка дельты не найдена")
 
-    response = 'Уровень воды в реке: ' + water_level + ' см, ' + ' за последние сутки изменился на ' + delta_level + ' см.'
+    response = f'Уровень воды в реке: {water_level} см, за последние сутки изменился на {delta_level} см.'
 
     return response
