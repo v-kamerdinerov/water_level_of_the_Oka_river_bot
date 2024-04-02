@@ -76,9 +76,9 @@ jobs:
       - name: Download digests
         uses: actions/download-artifact@v4
         with:
-          extract: true
           path: ${{ env.DIGEST_PATH }}
-          retention-days: 1
+          pattern: digests-*
+          merge-multiple: true
 
       - name: Display structure of downloaded files
         run: ls -R ${{ env.DIGEST_PATH }}
