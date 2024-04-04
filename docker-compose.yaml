@@ -2,5 +2,6 @@ version: "3.0"
 services:
   water_river_bot:
     image: vladkmrdnv/water_level_of_the_oka_river_bot
+    pull_policy: always
     env_file: .env
     restart: always
