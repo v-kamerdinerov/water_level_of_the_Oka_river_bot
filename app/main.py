@@ -34,7 +34,9 @@ def handle_start(message):
 def handle_text(message):
     if message.text.strip() == 'Уровень':
         answer = check_level()
-        logging.warning(f"Отправлено сообщение: {answer}")
+        user_first_name = str(message.chat.first_name)
+        user_id = str(message.chat.id)
+        logging.warning(f"Отправлено сообщение: {answer} пользователю:  {user_first_name} - {user_id} ")
         bot.send_message(message.chat.id, answer)
 
 
