@@ -28,7 +28,7 @@ def check_level():
 
     # Регулярное выражение для поиска строки с заданным шаблоном
     level_pattern = r"уровень воды в реке Ока по данным гидропоста.*?(\d+) cм над нулем поста"
-    delta_pattern = r"повысился на (\d+) см"
+    delta_pattern = r"на (\d+) см"
 
     # Поиск совпадений в тексте
     level_match = re.search(level_pattern, soup.text, re.IGNORECASE)
