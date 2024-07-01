@@ -40,12 +40,14 @@ def check_level():
         logging.info(f"get water level {water_level}")
     else:
         logging.error("Строка уровня не найдена")
+        water_level = "0"
 
     if delta_match:
         delta_level = delta_match.group(1)
         logging.info(f"get delta {delta_level}")
     else:
         logging.error("Строка дельты не найдена")
+        delta_level = "0"
 
     response = f'Уровень воды в реке: {water_level} см, за последние сутки изменился на {delta_level} см.'
 
