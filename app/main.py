@@ -1,6 +1,7 @@
 import telebot
 import logging
 import os
+import time
 from libs.logs import log_date, log_struct
 from level import check_level
 from telebot import types
@@ -41,8 +42,13 @@ def handle_text(message):
 
 
 def main():
-    logging.warning("Запуск бота")
-    bot.polling(none_stop=True, interval=0)
+    while True:
+        try:
+            logging.warning("Запуск бота")
+            bot.polling(none_stop=True, interval=0, timeout=90)
+        except Exception as e:
+            logging.error(f"Ошибка: {e}")
+            time.sleep(5)
 
 
 if __name__ == "__main__":
