@@ -49,7 +49,7 @@ def main():
     while True:
         try:
             logging.warning("Запуск бота")
-            bot.polling(none_stop=True, interval=0, timeout=90)
+            bot.infinity_polling(none_stop=True, interval=0, timeout=90)
         except Exception as e:
             logging.error(f"Ошибка: {e}")
             time.sleep(5)
